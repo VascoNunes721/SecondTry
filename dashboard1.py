@@ -43,6 +43,7 @@ available_metrics = ['MAE', 'MBE', 'MSE', 'RMSE', 'cvRMSE', 'NMBE']
 
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server=app.server
 
 app.layout = html.Div([
     ################################################ MENU ################################################
@@ -621,4 +622,4 @@ def tables_plot(selected_metrics):
         return dcc.Graph(figure=table_figure,style={'height': '200px'}), dcc.Graph(figure=table_figure2,style={'height': '200px'})
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
